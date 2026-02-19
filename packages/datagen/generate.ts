@@ -18,6 +18,7 @@ interface ScaleConfig {
 }
 
 const SCALES: Record<string, ScaleConfig> = {
+  s: { points: 100, lines: 50, polygons: 75, multipolygons: 25 },
   small: { points: 2000, lines: 1000, polygons: 1500, multipolygons: 500 },
   large: { points: 800000, lines: 400000, polygons: 600000, multipolygons: 200000 },
 };
@@ -32,7 +33,7 @@ async function run() {
   const scaleArg = process.argv.find((_, i, arr) => arr[i - 1] === "--scale") || "small";
   const scale = SCALES[scaleArg];
   if (!scale) {
-    console.error(`Unknown scale: ${scaleArg}. Use: small | large`);
+    console.error(`Unknown scale: ${scaleArg}. Use: s | small | large`);
     process.exit(1);
   }
 
