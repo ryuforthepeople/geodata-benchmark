@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  postgis:
+    image: postgis/postgis:16-3.4
+    container_name: bench-postgis
+    environment:
+      POSTGRES_DB: geobench
+      POSTGRES_USER: bench
+      POSTGRES_PASSWORD: bench
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    shm_size: "512mb"
+    command: >
+      postgres
+        -c shared_buffers=1GB
+        -c work_mem=256MB
+        -c maintenance_work_mem=512MB
+        -c effective_cache_size=3GB
+        -c max_parallel_workers_per_gather=4
+        -c random_page_cost=1.1
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: bench-mssql
+    environment:
+      ACCEPT_EULA: "Y"
+      MSSQL_SA_PASSWORD: "Bench!Pass123"
+      MSSQL_MEMORY_LIMIT_MB: 4096
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssqldata:/var/opt/mssql
+
+volumes:
+  pgdata:
+  mssqldata:

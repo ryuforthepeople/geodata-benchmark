@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.nuxt/
+.output/
+.env
+packages/datagen/output/
+packages/benchmark/results/
+*.log

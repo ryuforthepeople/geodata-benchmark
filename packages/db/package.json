@@ -1,0 +1,19 @@
+{
+  "name": "@geodata-benchmark/db",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "seed:postgis": "tsx seed/import-postgis.ts",
+    "seed:mssql": "tsx seed/import-mssql.ts"
+  },
+  "dependencies": {
+    "pg": "^8",
+    "mssql": "^10",
+    "@terraformer/wkt": "^2"
+  },
+  "devDependencies": {
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

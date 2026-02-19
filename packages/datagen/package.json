@@ -1,0 +1,16 @@
+{
+  "name": "@geodata-benchmark/datagen",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate": "tsx generate.ts"
+  },
+  "dependencies": {
+    "@turf/turf": "^7"
+  },
+  "devDependencies": {
+    "tsx": "^4",
+    "typescript": "^5"
+  }
+}

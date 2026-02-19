@@ -1,0 +1,22 @@
+{
+  "name": "geodata-benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/db",
+    "packages/datagen",
+    "packages/benchmark",
+    "packages/app"
+  ],
+  "scripts": {
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "generate": "npm run generate -w packages/datagen",
+    "benchmark": "npm run start -w packages/benchmark",
+    "dev": "npm run dev -w packages/app"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

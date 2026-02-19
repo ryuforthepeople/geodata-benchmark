@@ -1,0 +1,24 @@
+{
+  "name": "@geodata-benchmark/benchmark",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "tsx runner.ts"
+  },
+  "dependencies": {
+    "@terraformer/wkt": "^2",
+    "better-sqlite3": "^11",
+    "mssql": "^10",
+    "p-limit": "^6",
+    "pg": "^8"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7",
+    "@types/mssql": "^9.1.9",
+    "@types/pg": "^8.16.0",
+    "tsx": "^4",
+    "typescript": "^5",
+    "vitest": "^2"
+  }
+}
